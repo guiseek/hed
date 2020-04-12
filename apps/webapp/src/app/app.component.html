@@ -1,8 +1,29 @@
-<div style="text-align:center">
-  <h1>Welcome to webapp!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
-</div>
+<mat-toolbar>
+  <span>Welcome to webapp!</span>
+</mat-toolbar>
+
+
 <div>Message: {{ hello$ | async | json }}</div>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card>
+
+    <mat-form-field>
+      <mat-label for="message">Mensagem</mat-label>
+      <input type="text" matInput formControlName="message">
+    </mat-form-field>
+
+    <button mat-button color="accent" type="submit">Enviar</button>
+
+  </mat-card>
+</form>
+<mat-list>
+  <h3 mat-subheading>Lista de items</h3>
+  <mat-list-item *ngFor="let item of (items$ | async); index as i">
+    <h3 mat-line>{{ item.message }}</h3>
+
+    <button mat-icon-button type="button" (click)="removeItem(i)">
+      <mat-icon color="warn">delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
