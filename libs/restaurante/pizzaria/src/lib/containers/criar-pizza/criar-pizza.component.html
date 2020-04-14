@@ -1,0 +1,26 @@
+<div class="pizza-selected" [formGroup]="parent">
+  <div class="pizza-selected__empty" *ngIf="!selected.length">
+    Escolha os sabores da pizza
+  </div>
+  <mat-list
+    class="pizza-selected__list"
+    *ngIf="selected.length"
+    formArrayName="sabores">
+    <mat-list-item
+      class="pizza-selected__item"
+      *ngFor="let sabor of selected; index as i;">
+      <mat-icon mat-list-icon>check</mat-icon>
+      <h3 mat-line class="lista-sabor" [formGroupName]="i">
+        <!-- <img src="assets/check.svg"> -->
+
+        {{ sabor }}
+      </h3>
+      <button
+        type="button"
+        mat-icon-button
+        (click)="onRemove(i)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>

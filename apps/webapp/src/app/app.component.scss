@@ -5,6 +5,16 @@
   display: block;
   font-family: sans-serif;
   min-width: 300px;
-  max-width: 600px;
+  max-width: 1024px;
   margin: 50px auto;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  section {
+    flex: 1;
+    margin: 36px;
+    // width: 50%;
+  }
 }

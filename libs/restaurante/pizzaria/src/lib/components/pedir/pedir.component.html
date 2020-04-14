@@ -1,0 +1,13 @@
+<div class="pizza-button" [formGroup]="parent">
+  <button
+    type="button"
+    mat-button
+    (click)="onClick()"
+    [disabled]="parent.invalid">
+
+    <mat-icon>add</mat-icon>
+
+    <!-- <img src="assets/add.svg"> -->
+    <ng-content></ng-content>
+  </button>
+</div>

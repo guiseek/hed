@@ -1,0 +1,7 @@
+<mat-form-field [formGroup]="parent" appearance="outline">
+  <mat-label>Pizza</mat-label>
+  <input type="text" matInput placeholder="Ex.: Marguerita" formControlName="name">
+  <mat-error *ngIf="invalid">
+    Pizza name is required
+  </mat-error>
+</mat-form-field>

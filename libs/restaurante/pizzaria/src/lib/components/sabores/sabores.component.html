@@ -1,0 +1,17 @@
+<div class="toppings-selector" [formGroup]="parent">
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip
+      class="toppings-selector__item"
+      *ngFor="let sabor of sabores"
+      [selected]="isActive(sabor)"
+      (click)="onSelect(sabor)">
+      {{ sabor }}
+    </mat-chip>
+    <div
+      class="error"
+      *ngIf="invalid"
+      >
+      selecione no mínimo um sabor
+    </div>
+  </mat-chip-list>
+</div>

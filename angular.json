@@ -202,6 +202,38 @@
           }
         }
       }
+    },
+    "restaurante-pizzaria": {
+      "projectType": "library",
+      "root": "libs/restaurante/pizzaria",
+      "sourceRoot": "libs/restaurante/pizzaria/src",
+      "prefix": "hed",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/restaurante/pizzaria/tsconfig.lib.json",
+              "libs/restaurante/pizzaria/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/restaurante/pizzaria/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/restaurante/pizzaria/jest.config.js",
+            "tsConfig": "libs/restaurante/pizzaria/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/restaurante/pizzaria/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hed/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@hed/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@hed/restaurante/pizzaria": ["libs/restaurante/pizzaria/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

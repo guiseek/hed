@@ -1,0 +1,7 @@
+<mat-list>
+  <h3 mat-subheader>Pedidos</h3>
+  <mat-list-item *ngFor="let pizza of pizzas">
+    <h3 mat-line>{{ pizza.name }}</h3>
+    <p mat-line>{{ pizza.sabores | juntar }}</p>
+  </mat-list-item>
+</mat-list>
